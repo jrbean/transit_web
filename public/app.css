@@ -1,0 +1,26 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-color: grey;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*.position {
+  font-size: 4rem;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-family: monospace;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  text-shadow: 0 1px 0 #000000;
+}
+.caption.top {
+top: 25px;
+}
+.caption.bottom {
+bottom: 25px;
+}*/

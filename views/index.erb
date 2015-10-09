@@ -1,7 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Transit Near Me</title>
+    <link rel="stylesheet" href="app.css" />
   </head>
     <body>
+      <form action="/location" method="POST">
+        <div>
+          <input type="text" name="position[lat]" placeholder="Latitude" />
+        </div>
+        <div>
+          <input type="text" name="position[long]" placeholder="Longitude" />
+        </div>
+        <div>
+          <button> Find metros/bikes/buses </button>
+        </div>
+      </form>
+      <!-- <div class="position lat">
+        <%= position[:lat] %>
+      </div>
+      <div class="position long">
+        <%= position[:long] %>
+      </div> -->
     </body>
 </html>
