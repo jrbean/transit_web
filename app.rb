@@ -9,7 +9,7 @@ get '/' do
 end
 
 post '/location' do
-  location = []
-  location.push(params[:position])
+  location = params[:position]
+
   erb :index, locals: { position: location }
 end
