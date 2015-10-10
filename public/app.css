@@ -1,15 +1,84 @@
-html {
-  height: 100%;
-}
+/* imported lato font from google.com/fonts */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+/* styled background color to black and adding padding */
 body {
-  height: 100%;
-  margin: 0;
-  background-color: grey;
-  background-repeat: no-repeat;
-  background-size: cover;
+    font-family: "Lato", sans-serif;
+    color: #fff;
+    background: #000;
+    padding: 30px 30px 50px 30px;
 }
-.position {
-  display: flex;
-  justify-content:center;
-  align-items:center;
+
+/* stylizes the line element */
+hr {
+    border: 1px solid #249b22;
+    margin: 10px;
+}
+
+/* styled "name" font color and weight */
+.name {
+    font-weight: 700;
+    font-size: 50px;
+    color: #7453a2;
+    text-align: right;
+}
+
+/* styled "title" font color and weight */
+.title {
+    font-weight: 400;
+    color: #007de4;
+    text-align: right;
+}
+
+/* styled the about section */
+.about {
+    font-weight: 400;
+    font-size: 16px;
+    color: #007de4;
+}
+
+/* styled the contact section */
+.contact {
+    font-weight: 400;
+    font-size: 16px;
+    color: #007de4;
+}
+
+/* styled "footer-title" font color and weight */
+.footer-title {
+    font-weight: 700;
+    color: #7453a2;
+}
+
+/* styled "footer-subutitle font color and weight */
+.footer-subtitle {
+    font-weight: 400;
+    color: #7453a2;
+}
+
+/* allows img to scale for massive screens */
+.img-responsive {
+    width: 100%;
+}
+
+/* styled "footer-buttons" font color and weight */
+.footer-buttons {
+    font-weight: 400;
+    color: #249b22;
+}
+
+/* changes button styling */
+.btn {
+    color: #000;
+    background: #337ab7;
+}
+
+/* changes navbar brand color */
+.navbar-inverse .navbar-brand {
+    color: #007de4;
+}
+
+/* changes navbar font color */
+.navbar-inverse .navbar-nav>li>a {
+    color: #7453a2;
 }
