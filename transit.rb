@@ -16,14 +16,11 @@ class TransitCheck
     @long = long
   end
 
-  def stations
-    @bikes  = BikeStation.near(lat, long)
-    @metros = MetroStation.near(lat, long)
-  end
-
   def station_results
-    @all_stations = (@bikes + @metros).sort_by { |s| s.distance_to(lat, long) }
-    @all_stations.each do |station|
+    bikes  = BikeStation.near(@lat, @long)
+    metros = MetroStation.near(@lat, @long)
+    all_stations = (bikes + metros).sort_by { |s| s.distance_to(lat, long) }
+    all_stations.each do |station|
       title = "#{station.name} (#{station.distance_to(lat, long).round(2)} mi)"
       # puts title
       # puts "=" * title.length

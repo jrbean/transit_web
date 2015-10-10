@@ -18,8 +18,10 @@ post '/location' do
   long = params[:position]["long"].to_f
 
   a = TransitCheck.new(lat, long)
-binding.pry
-  erb :index, locals: { position: params[:position] }
+
+  @results = a.station_results
+  binding.pry
+  erb :index, locals: { position: @results }
   end
 
 end
