@@ -4,27 +4,32 @@ require "httparty"
 require "haversine"
 
 require "./locatable"
-require "./station"
+require "./metro_station"
 require "./bike_station"
 
 CLOSE_RADIUS = 1
 
-# puts "Where are you?"
-# lat  = gets.chomp
-# long = gets.chomp
+class TransitCheck
 
-lat  =  38.903192
-long = -77.039766
+  def initialize (lat=38.903192, long=-77.039766)
+    @lat  = lat
+    @long = long
+  end
 
-bikes  = BikeStation.near(lat, long)
-metros = Station.near(lat, long)
+  def stations
+    @bikes  = BikeStation.near(lat, long)
+    @metros = MetroStation.near(lat, long)
+  end
 
-all_stations = (bikes + metros).sort_by { |s| s.distance_to(lat, long) }
-all_stations.each do |station|
-  title = "#{station.name} (#{station.distance_to(lat, long).round(2)} mi)"
-  puts title
-  puts "=" * title.length
-
-  puts station.extra_detail
-  puts
+  def station_results
+    @all_stations = (@bikes + @metros).sort_by { |s| s.distance_to(lat, long) }
+    @all_stations.each do |station|
+      title = "#{station.name} (#{station.distance_to(lat, long).round(2)} mi)"
+      # puts title
+      # puts "=" * title.length
+      #
+      # puts station.extra_detail
+      # puts
+      end
+    end
 end

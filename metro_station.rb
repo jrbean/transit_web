@@ -1,4 +1,4 @@
-class Station
+class MetroStation
   include Locatable
 
   attr_reader :name
@@ -13,8 +13,7 @@ class Station
   def upcoming_trains
     r = HTTParty.get(
       "https://api.wmata.com/StationPrediction.svc/json/GetPrediction/#{@code}",
-      headers: { "api_key" => "6535772455b54ed19a823fb82cf45cbf
-" }
+      headers: { "api_key" => "6535772455b54ed19a823fb82cf45cbf" }
     )
     r["Trains"]
   end
@@ -22,10 +21,9 @@ class Station
   def self.all_stations
     r = HTTParty.get(
       "https://api.wmata.com/Rail.svc/json/jStations",
-      headers: { "api_key" => "6535772455b54ed19a823fb82cf45cbf
-" }
+      headers: { "api_key" => "6535772455b54ed19a823fb82cf45cbf" }
     )
-    r["Stations"].map { |h| Station.new(h) }
+    r["Stations"].map { |h| MetroStation.new(h) }
   end
 
   def extra_detail
