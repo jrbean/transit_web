@@ -1,14 +1,13 @@
-require 'sinatra'
+require 'sinatra/base'
 require 'tilt/erb'
 require 'haversine'
 require 'pry'
 
 require 'HTTParty'
 require './locatable.rb'
-require './bike_station.rb'
-require './metro_station.rb'
+require './transit.rb'
 
-class TransitApp
+class TransitApp < Sinatra::Base
 get '/' do
   erb :index, locals: { position: nil }
 end
@@ -21,4 +20,8 @@ post '/location' do
   a = TransitCheck.new(lat, long)
 binding.pry
   erb :index, locals: { position: params[:position] }
+  end
+
 end
+
+TransitApp.run!
