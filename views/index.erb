@@ -77,13 +77,19 @@
         <!-- All footer items -->
         <footer class="row">
             <div class="col-md-4">
-                <%= @results[:station] %>
+                <% @results.each do |s| %>
+                  <%= s[:station] %>
+                <% end %>
             </div>
             <div class="col-md-4">
-                <%= @results[:distance] %>
+                <% @results.each do |d| %>
+                  <%= d[:distance] %>
+                <% end %>
             </div>
             <div class="col-md-4">
-                <%= @results[:extra] %>
+                <% @results.each do |e| %>
+                  <%= e[:extra] %>
+                <% end %>
             </div>
         </footer>
         </div>

@@ -8,7 +8,6 @@ require './locatable.rb'
 require './transit.rb'
 
 class TransitApp < Sinatra::Base
-  include Enumerable
 get '/' do
   erb :index, locals: { position: nil }
 end
