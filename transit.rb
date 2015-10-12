@@ -19,14 +19,17 @@ class TransitCheck
   def station_results
     bikes  = BikeStation.near(@lat, @long)
     metros = MetroStation.near(@lat, @long)
+    sorted = []
     all_stations = (bikes + metros).sort_by { |s| s.distance_to(@lat, @long) }
-    all_stations.map do |station|
-      title = "#{station.name} (#{station.distance_to(@lat, @long).round(2)} mi)"
-
-      # puts "=" * title.length
-      #
-      # puts station.extra_detail
-      # puts
+    all_stations.first(5).each do |station|
+      # title = "#{station.name} (#{station.distance_to(@lat, @long).round(2)} mi #{station.extra_detail})"
+      title = {
+        :station => station.name,
+        :distance => station.distance_to(@lat, @long).round(2),
+        :extra => station.extra_detail
+      }
+      sorted << title
       end
+    sorted
     end
 end

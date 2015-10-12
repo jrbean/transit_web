@@ -8,6 +8,7 @@ require './locatable.rb'
 require './transit.rb'
 
 class TransitApp < Sinatra::Base
+  include Enumerable
 get '/' do
   erb :index, locals: { position: nil }
 end
@@ -20,7 +21,7 @@ post '/location' do
   a = TransitCheck.new(lat, long)
 
   @results = a.station_results
-  binding.pry
+  
   erb :index, locals: { position: @results }
   end
 
