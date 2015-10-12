@@ -28,7 +28,7 @@ class MetroStation
 
   def extra_detail
     upcoming_trains.map do |train|
-      " #{train["Car"]}\t#{train["Min"]}\t#{train["Destination"]}"
+      " #{train["Car"]} #{train["Min"]} #{train["Destination"]}"
     end
   end
 end

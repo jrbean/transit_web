@@ -78,17 +78,17 @@
         <footer class="row">
             <div class="col-md-4">
                 <% @results.each do |s| %>
-                  <%= s[:station] %>
+                  <li> <%= s[:station] %> </li>
                 <% end %>
             </div>
             <div class="col-md-4">
                 <% @results.each do |d| %>
-                  <%= d[:distance] %>
+                  <li> <%= d[:distance] %> </li>
                 <% end %>
             </div>
             <div class="col-md-4">
                 <% @results.each do |e| %>
-                  <%= e[:extra] %>
+                <li>  <%= e[:extra] %> </li>
                 <% end %>
             </div>
         </footer>
